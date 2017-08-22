@@ -4,10 +4,13 @@
       <h2>SSL pricelist</h2>
       <table *ngIf="pricelist">
         <tbody>
-          <tr *ngFor="let item of pricelist">
-            <td><a>{{ item.name }}</a></td>
-            <td> от {{ item.price.period[0].cost }} {{ item.price.currency }}</td>
-          </tr>
+        <tr *ngFor="let item of pricelist">
+          <td>
+            <a href="#" class="title" (mouseover)="toggleTooltip($event)" (mouseout)="toggleTooltip($event)">{{ item.name }}</a>
+            <tooltip *ngIf="item.description" [data]="item.description"></tooltip>
+          </td>
+          <td>от {{ item.price.period[0].cost }} {{ item.price.currency }}</td>
+        </tr>
         </tbody>
       </table>
     </div>
