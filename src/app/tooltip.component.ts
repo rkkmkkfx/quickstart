@@ -1,6 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-import { AppService } from './app.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'tooltip',
@@ -8,15 +6,7 @@ import { AppService } from './app.service';
   styleUrls: ['./tooltip.component.css']
 })
 
-export class TooltipComponent implements OnInit {
-  constructor(private appService: AppService) {}
-
-  item: any = {};
-
+export class TooltipComponent {
   @Input()
   data: string;
-
-  ngOnInit() {
-    this.item.desc = this.data;
-  }
 }
